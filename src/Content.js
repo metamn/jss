@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-jss";
+import styled from "react-jss"; // it works with `styled-jss`
 
 // Object notation
 // Theming: `theme` is globally accessible since the `<ThemeProvider>` HOC in `App`
@@ -10,10 +10,16 @@ const Container = styled("section")(({ theme }) => ({
 }));
 
 // Tagged template literals
-// - they can't be mixed with object notations ... one notation at a time
+// - they can't be mixed with object notations ... one notation at a time: either object or template
 const H1 = styled("H1")(`
 	font-size: large;
 	`);
+
+// Tagged template literals with plugin
+// This should work ...
+const XXL = styled("div")(({ theme }) => ({
+  ...theme.textStyles.xxl
+}));
 
 // Props
 const Text = styled("div")(props => ({
@@ -52,10 +58,6 @@ const ListItem = styled(Text)({
     }
   }
 });
-
-const XXL = styled("div")(({ theme }) => ({
-  ...theme.textStyles.xxl
-}));
 
 // Styling components
 const Comp = props => {
