@@ -53,14 +53,32 @@ const ListItem = styled(Text)({
   }
 });
 
+const XXL = styled("div")(({ theme }) => ({
+  ...theme.textStyles.xxl
+}));
+
+// Styling components
+const Comp = props => {
+  const { children } = props;
+  return <div>{children}</div>;
+};
+
+const CompStyled = styled(Comp)({
+  border: "1px solid"
+});
+
 const Content = () => {
   return (
     <Container>
       <H1>JSS</H1>
       <Text type="p">Features:</Text>
+      <ListItem>Global styles ??</ListItem>
       <ListItem>Theming</ListItem>
       <ListItem>Object notation</ListItem>
       <ListItem>Tagged template literals</ListItem>
+      <ListItem>
+        <XXL>Tagged template literals with plugin ??</XXL>
+      </ListItem>
       <ListItem>Props</ListItem>
       <ListItem>Composition</ListItem>
       <ListItem>
@@ -76,6 +94,9 @@ const Content = () => {
         <OtherElement>
           <span>Styling nested children</span>
         </OtherElement>
+      </ListItem>
+      <ListItem>
+        <CompStyled>Styling components ??</CompStyled>
       </ListItem>
     </Container>
   );
