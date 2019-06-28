@@ -21,6 +21,9 @@ const Text = styled("div")(props => ({
   marginBottom: props.type === "p" ? "var(--lem)" : 0
 }));
 
+// Styling other elements
+const OtherElement = styled("div")();
+
 // Composition
 const ListItem = styled(Text)({
   letterSpacing: "3px",
@@ -35,6 +38,17 @@ const ListItem = styled(Text)({
   "& .uppercase": {
     "@media (min-width: 1024px)": {
       textTransform: "uppercase"
+    }
+  },
+
+  // Styling other elements
+  [`& ${OtherElement}`]: {
+    backgroundColor: "black",
+    color: "white",
+
+    // Styling nested children
+    "& span": {
+      fontStyle: "italic"
     }
   }
 });
@@ -54,6 +68,14 @@ const Content = () => {
       </ListItem>
       <ListItem>
         <span class="uppercase">Media queries</span>
+      </ListItem>
+      <ListItem>
+        <OtherElement>Styling other elements</OtherElement>
+      </ListItem>
+      <ListItem>
+        <OtherElement>
+          <span>Styling nested children</span>
+        </OtherElement>
       </ListItem>
     </Container>
   );
