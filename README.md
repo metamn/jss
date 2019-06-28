@@ -9,7 +9,7 @@ Playin'
 ## Install
 
 ```
-yarn add react-jss
+yarn add react-jss styled-jss
 ```
 
 See: https://cssinjs.org/react-jss

@@ -23,6 +23,10 @@ const Theme = {
     },
     large: {
       fontSize: "1.25em"
+    },
+    xxl: {
+      fontSize: "2.5em",
+      lineHeight: "1.1"
     }
   }
 };
